@@ -1,0 +1,20 @@
+.card-formulario {
+    display: flex;
+    justify-content: center;
+    margin: 80px 0;
+}
+
+.card-formulario form {
+    background-color: var(--fundo-card);
+    width: 1121px;
+    height: 789px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+    padding: 36px 64px;
+}
+
+.card-formulario h2 {
+    font-family: var(--fonte-titulo);
+    font-weight: 300;
+    font-size: 32px;
+}

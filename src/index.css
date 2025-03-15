@@ -1,7 +1,8 @@
 :root {
+  --branco: #FFFFFF;
+  --preto-label: #212121;
   --azul-banner: #6278F7;
   --verde-destaque: #95FFD4;
-  --cinza-principal: #F2F2F2;
   --fundo-prog: #D9F7E9;
   --destaq-prog: #57C278;
   --fundo-front: #E8F8FF;
@@ -16,6 +17,9 @@
   --destaq-mobile: #FFBA05;
   --fundo-inov: #FFEEDF;
   --destaq-inov: #FF8A29;
+  --fonte-titulo: "Prata", serif;
+  --fonte-texto: "Montserrat", sans-serif;
+  --fundo-card: #F6F6F6;
 }
 
 body {
