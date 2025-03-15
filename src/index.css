@@ -1,3 +1,23 @@
+:root {
+  --azul-banner: #6278F7;
+  --verde-destaque: #95FFD4;
+  --cinza-principal: #F2F2F2;
+  --fundo-prog: #D9F7E9;
+  --destaq-prog: #57C278;
+  --fundo-front: #E8F8FF;
+  --destaq-front: #82CFFA;
+  --fundo-data: #F0F8E2;
+  --destaq-data: #A6D157;
+  --fundo-devops: #FDE7E8;
+  --destaq-devops: #E06B69;
+  --fundo-ux: #FAE9F5;
+  --destaq-ux: #DB6EBF;
+  --fundo-mobile: #FFF5D9;
+  --destaq-mobile: #FFBA05;
+  --fundo-inov: #FFEEDF;
+  --destaq-inov: #FF8A29;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
