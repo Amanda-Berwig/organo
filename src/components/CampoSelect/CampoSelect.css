@@ -1,0 +1,13 @@
+.campo__texto select {
+    background-color: var(--branco);
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    border: none;
+    width: 930px;
+    height: 80px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+
+}
