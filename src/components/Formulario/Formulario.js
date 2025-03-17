@@ -1,3 +1,4 @@
+import Botao from "../Botao/Botao";
 import CampoSelection from "../CampoSelect/CampoSelect";
 import CampoTexto from "../CampoTexto/CampoTexto";
 import "./Formulario.css";
@@ -12,14 +13,27 @@ export default function Formulario() {
     "Mobile",
     "Inovação e Gestão",
   ];
+  const aoSalvar = (evento) => {
+    evento.preventDefault();
+    console.log("Form foi submetido");
+  };
   return (
     <section className="card-formulario">
-      <form>
+      <form onSubmit={aoSalvar}>
         <h2>Preencha os dados para criar o card do colaborador.</h2>
-        <CampoTexto label="Nome" placeholder="Digite seu nome" />
-        <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
+        <CampoTexto
+          obrigatorio={true}
+          label="Nome"
+          placeholder="Digite seu nome"
+        />
+        <CampoTexto
+          obrigatorio={true}
+          label="Cargo"
+          placeholder="Digite seu cargo"
+        />
         <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem" />
-        <CampoSelection label="Times" itens={times} />
+        <CampoSelection obrigatorio={true} label="Times" itens={times} />
+        <Botao texto="Criar card" />
       </form>
     </section>
   );
