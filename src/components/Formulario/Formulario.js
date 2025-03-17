@@ -3,6 +3,15 @@ import CampoTexto from "../CampoTexto/CampoTexto";
 import "./Formulario.css";
 
 export default function Formulario() {
+  const times = [
+    "Programação",
+    "Front-End",
+    "Data Science",
+    "Devops",
+    "UX e Design",
+    "Mobile",
+    "Inovação e Gestão",
+  ];
   return (
     <section className="card-formulario">
       <form>
@@ -10,7 +19,7 @@ export default function Formulario() {
         <CampoTexto label="Nome" placeholder="Digite seu nome" />
         <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
         <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem" />
-        <CampoSelection />
+        <CampoSelection label="Times" itens={times} />
       </form>
     </section>
   );
