@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Botao from "../Botao/Botao";
 import CampoSelection from "../CampoSelect/CampoSelect";
 import CampoTexto from "../CampoTexto/CampoTexto";
@@ -13,9 +14,15 @@ export default function Formulario() {
     "Mobile",
     "Inovação e Gestão",
   ];
+
+  const [nome, setNome] = useState("");
+  const [cargo, setCargo] = useState("");
+  const [imagem, setImagem] = useState("");
+  const [time, setTime] = useState("");
+
   const aoSalvar = (evento) => {
     evento.preventDefault();
-    console.log("Form foi submetido");
+    console.log("Form foi submetido =>", nome, cargo, imagem, time);
   };
   return (
     <section className="card-formulario">
@@ -25,14 +32,29 @@ export default function Formulario() {
           obrigatorio={true}
           label="Nome"
           placeholder="Digite seu nome"
+          valor={nome}
+          aoAlterado={(valor) => setNome(valor)}
         />
         <CampoTexto
           obrigatorio={true}
           label="Cargo"
           placeholder="Digite seu cargo"
+          valor={cargo}
+          aoAlterado={(valor) => setCargo(valor)}
         />
-        <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem" />
-        <CampoSelection obrigatorio={true} label="Times" itens={times} />
+        <CampoTexto
+          label="Imagem"
+          placeholder="Informe o endereço da imagem"
+          valor={imagem}
+          aoAlterado={(valor) => setImagem(valor)}
+        />
+        <CampoSelection
+          obrigatorio={true}
+          label="Times"
+          itens={times}
+          valor={time}
+          aoAlterado={(valor) => setTime(valor)}
+        />
         <Botao texto="Criar card" />
       </form>
     </section>

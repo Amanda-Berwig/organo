@@ -3,7 +3,10 @@ export default function CampoSelection(props) {
   return (
     <div className="campo__texto">
       <label>{props.label}</label>
-      <select name="" id="">
+      <select
+        onChange={(evento) => props.aoAlterado(evento.target.value)}
+        value={props.value}
+      >
         <option value="" disabled selected>
           Selecione uma opção
         </option>
