@@ -4,7 +4,7 @@ import CampoSelection from "../CampoSelect/CampoSelect";
 import CampoTexto from "../CampoTexto/CampoTexto";
 import "./Formulario.css";
 
-export default function Formulario() {
+export default function Formulario(props) {
   const times = [
     "Programação",
     "Front-End",
@@ -22,7 +22,13 @@ export default function Formulario() {
 
   const aoSalvar = (evento) => {
     evento.preventDefault();
-    console.log("Form foi submetido =>", nome, cargo, imagem, time);
+    //console.log("Form foi submetido =>", nome, cargo, imagem, time);
+    props.aoColaboradorCadastrado({
+      nome,
+      cargo,
+      imagem,
+      time,
+    });
   };
   return (
     <section className="card-formulario">
