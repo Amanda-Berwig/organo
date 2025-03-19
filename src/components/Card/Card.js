@@ -1,14 +1,14 @@
 import "./Card.css";
 
-export default function Card() {
+export default function Card({ nome, cargo, imagem }) {
   return (
     <div className="colaborador">
       <div className="cabecalho">
-        <img src="https://github.com/Amanda-Berwig.png" alt="" />
+        <img src={imagem} alt={nome} />
       </div>
       <div className="rodape">
-        <h4>amanda</h4>
-        <h5>instrutor</h5>
+        <h4>{nome}</h4>
+        <h5>{cargo}</h5>
       </div>
     </div>
   );
