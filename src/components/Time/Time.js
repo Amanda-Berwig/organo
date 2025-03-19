@@ -1,3 +1,4 @@
+import Card from "../Card/Card";
 import "./Time.css";
 export default function Time(props) {
   return (
