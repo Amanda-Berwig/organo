@@ -26,7 +26,7 @@ function App() {
       corSecundaria: "var(--fundo-devops)",
     },
     {
-      nome: "UX e Design ",
+      nome: "UX e Design",
       corPrimaria: "var(--destaq-ux)",
       corSecundaria: "var(--fundo-ux)",
     },
