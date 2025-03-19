@@ -5,16 +5,6 @@ import CampoTexto from "../CampoTexto/CampoTexto";
 import "./Formulario.css";
 
 export default function Formulario(props) {
-  const times = [
-    "Programação",
-    "Front-End",
-    "Data Science",
-    "Devops",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
-
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
@@ -57,7 +47,7 @@ export default function Formulario(props) {
         <CampoSelection
           obrigatorio={true}
           label="Times"
-          itens={times}
+          itens={props.times}
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
         />

@@ -1,6 +1,5 @@
 .time {
     text-align: center;
-    background-color: var(--fundo-prog);
     padding: 32px;
 
 }
@@ -8,7 +7,7 @@
 .time h3 {
     font-family: var(--fonte-titulo);
     font-size: 32px;
-    border-bottom: 4px solid var(--destaq-prog);
+    border-bottom: 4px solid;
     display: inline-block;
     padding-bottom: 8px;
 }
