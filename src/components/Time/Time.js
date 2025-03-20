@@ -8,9 +8,11 @@ export default function Time(props) {
       <div className="colaboradores">
         {props.colaboradores.map((colaborador) => (
           <Card
+            key={colaborador.nome}
             nome={colaborador.nome}
             cargo={colaborador.cargo}
             imagem={colaborador.imagem}
+            corDeFundo={props.corPrimaria}
           />
         ))}
       </div>

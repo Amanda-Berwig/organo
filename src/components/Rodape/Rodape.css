@@ -1,0 +1,23 @@
+.footer {
+    background-color: var(--azul-banner);
+    background-image: url(./assets/fundo.png);
+    display: flex;
+    justify-content: space-between;
+    height: 130px;
+    padding: 80px 160px;
+    align-items: center;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 34px;
+    list-style: none;
+}
+
+.footer p {
+    font-size: 20px;
+    font-family: var(--font-texto);
+    color: var(--branco);
+    font-weight: 400;
+
+}

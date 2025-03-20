@@ -5,9 +5,9 @@ export default function CampoSelection(props) {
       <label>{props.label}</label>
       <select
         onChange={(evento) => props.aoAlterado(evento.target.value)}
-        value={props.value}
+        value={props.valor}
       >
-        <option value="" disabled selected>
+        <option value="" disabled>
           Selecione uma opção
         </option>
         {props.itens.map((item) => {
