@@ -3,48 +3,51 @@ import Banner from "./components/Banner/Banner";
 import Formulario from "./components/Formulario/Formulario";
 import Time from "./components/Time/Time";
 import Rodape from "./components/Rodape/Rodape";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [times, setTimes] = useState([
     {
+      id: uuidv4(),
+
       nome: "Programação",
-      corPrimaria: "var(--destaq-prog)",
-      corSecundaria: "var(--fundo-prog)",
+      cor: "#57C278",
     },
     {
+      id: uuidv4(),
       nome: "Front-End",
-      corPrimaria: "var(--destaq-front)",
-      corSecundaria: "var(--fundo-front)",
+      cor: "82CFFA",
     },
     {
+      id: uuidv4(),
       nome: "Data Science",
-      corPrimaria: "var(--destaq-data)",
-      corSecundaria: "var(--fundo-data)",
+      cor: "#A6D157",
     },
     {
+      id: uuidv4(),
       nome: "Devops",
-      corPrimaria: "var(--destaq-devops)",
-      corSecundaria: "var(--fundo-devops)",
+      cor: "E06B69",
     },
     {
+      id: uuidv4(),
       nome: "UX e Design",
-      corPrimaria: "var(--destaq-ux)",
-      corSecundaria: "var(--fundo-ux)",
+      cor: "DB6EBF",
     },
     {
+      id: uuidv4(),
       nome: "Mobile",
-      corPrimaria: "var(--destaq-mobile)",
-      corSecundaria: "var(--fundo-mobile)",
+      cor: "FFBA05",
     },
     {
+      id: uuidv4(),
       nome: "Inovação e Gestão",
-      corPrimaria: "var(--destaq-inov)",
-      corSecundaria: "var(--fundo-inov)",
+      cor: "#FF8A29",
     },
   ]);
 
   const inicial = [
     {
+      id: uuidv4(),
       nome: "JULIANA AMOASEI",
       cargo: "Desenvolvedora de software e instrutora",
       imagem:
@@ -52,6 +55,7 @@ function App() {
       time: times[0].nome,
     },
     {
+      id: uuidv4(),
       nome: "DANIEL ARTINE",
       cargo: "Engenheiro de Software na Stone Age",
       imagem:
@@ -59,6 +63,7 @@ function App() {
       time: times[0].nome,
     },
     {
+      id: uuidv4(),
       nome: "GUILHERME LIMA",
       cargo: "Desenvolvedor Python e JavaScript na Alura",
       imagem:
@@ -66,6 +71,7 @@ function App() {
       time: times[0].nome,
     },
     {
+      id: uuidv4(),
       nome: "PAULO SILVEIRA",
       cargo: "Hipster e CEO da Alura",
       imagem:
@@ -73,6 +79,7 @@ function App() {
       time: times[0].nome,
     },
     {
+      id: uuidv4(),
       nome: "JULIANA AMOASEI",
       cargo: "Desenvolvedora de software e instrutora",
       imagem:
@@ -80,6 +87,7 @@ function App() {
       time: times[1].nome,
     },
     {
+      id: uuidv4(),
       nome: "DANIEL ARTINE",
       cargo: "Engenheiro de Software na Stone Age",
       imagem:
@@ -87,6 +95,7 @@ function App() {
       time: times[1].nome,
     },
     {
+      id: uuidv4(),
       nome: "GUILHERME LIMA",
       cargo: "Desenvolvedor Python e JavaScript na Alura",
       imagem:
@@ -94,6 +103,7 @@ function App() {
       time: times[1].nome,
     },
     {
+      id: uuidv4(),
       nome: "PAULO SILVEIRA",
       cargo: "Hipster e CEO da Alura",
       imagem:
@@ -101,6 +111,7 @@ function App() {
       time: times[1].nome,
     },
     {
+      id: uuidv4(),
       nome: "JULIANA AMOASEI",
       cargo: "Desenvolvedora de software e instrutora",
       imagem:
@@ -109,17 +120,17 @@ function App() {
     },
   ];
   const [colaboradores, setColaboradores] = useState(inicial);
-  function deletarColaborador(nome) {
+  function deletarColaborador(id) {
     console.log("Deletar colaborador");
     setColaboradores(
-      colaboradores.filter((colaborador) => colaborador.nome !== nome)
+      colaboradores.filter((colaborador) => colaborador.id !== id)
     );
   }
-  function mudarCorTime(cor, nome) {
+  function mudarCorTime(cor, id) {
     setTimes(
       times.map((time) => {
-        if (time.nome === nome) {
-          time.corPrimaria = cor;
+        if (time.id === id) {
+          time.cor = cor;
         }
         return time;
       })
@@ -138,9 +149,7 @@ function App() {
         <Time
           key={indice}
           mudarCor={mudarCorTime}
-          nome={time.nome}
-          corPrimaria={time.corPrimaria}
-          corSecundaria={time.corSecundaria}
+          time={time}
           colaboradores={colaboradores.filter(
             (colaborador) => colaborador.time === time.nome
           )}

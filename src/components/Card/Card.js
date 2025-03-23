@@ -1,21 +1,21 @@
 import "./Card.css";
 import { IoCloseCircleSharp } from "react-icons/io5";
 
-export default function Card({ nome, cargo, imagem, corDeFundo, aoDeletar }) {
+export default function Card({ colaborador, corDeFundo, aoDeletar }) {
   return (
     <div className="colaborador">
       <IoCloseCircleSharp
         size={35}
         className="deletar"
-        onClick={() => aoDeletar(nome)}
+        onClick={() => aoDeletar(colaborador.id)}
       />
       <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
-        <img src={imagem} alt={nome} />
+        <img src={colaborador.imagem} alt={colaborador.nome} />
       </div>
 
       <div className="rodape">
-        <h4>{nome}</h4>
-        <h5>{cargo}</h5>
+        <h4>{colaborador.nome}</h4>
+        <h5>{colaborador.cargo}</h5>
       </div>
     </div>
   );
