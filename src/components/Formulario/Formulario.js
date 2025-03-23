@@ -4,16 +4,22 @@ import CampoSelection from "../CampoSelect/CampoSelect";
 import CampoTexto from "../CampoTexto/CampoTexto";
 import "./Formulario.css";
 
-export default function Formulario(props) {
+export default function Formulario({
+  aoColaboradorCadastrado,
+  times,
+  cadastrarTime,
+}) {
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
   const [time, setTime] = useState("");
+  const [nomeNovoTime, setNomeNovoTime] = useState("");
+  const [corNovoTime, setCorNovoTime] = useState("");
 
   const aoSalvar = (evento) => {
     evento.preventDefault();
 
-    props.aoColaboradorCadastrado({
+    aoColaboradorCadastrado({
       nome,
       cargo,
       imagem,
@@ -51,11 +57,37 @@ export default function Formulario(props) {
         <CampoSelection
           obrigatorio={true}
           label="Times"
-          itens={props.times}
+          itens={times}
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
         />
         <Botao texto="Criar card" />
+      </form>
+      <form
+        onSubmit={(evento) => {
+          evento.preventDefault();
+          cadastrarTime({ nome: nomeNovoTime, cor: corNovoTime });
+          setNomeNovoTime("");
+          setCorNovoTime("");
+        }}
+      >
+        <h2>Preencha os dados para criar um novo time.</h2>
+        <CampoTexto
+          obrigatorio
+          label="Nome do time"
+          placeholder="Digite o nome do time"
+          valor={nomeNovoTime}
+          aoAlterado={(valor) => setNomeNovoTime(valor)}
+        />
+        <CampoTexto
+          obrigatorio
+          label="Cor do time"
+          placeholder="Digite a cor do time em hexadecimal"
+          valor={corNovoTime}
+          aoAlterado={(valor) => setCorNovoTime(valor)}
+        />
+
+        <Botao texto="Criar um novo time" />
       </form>
     </section>
   );
