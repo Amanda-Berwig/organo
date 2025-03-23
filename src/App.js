@@ -47,6 +47,7 @@ function App() {
 
   const inicial = [
     {
+      favorito: false,
       id: uuidv4(),
       nome: "JULIANA AMOASEI",
       cargo: "Desenvolvedora de software e instrutora",
@@ -55,6 +56,7 @@ function App() {
       time: times[0].nome,
     },
     {
+      favorito: false,
       id: uuidv4(),
       nome: "DANIEL ARTINE",
       cargo: "Engenheiro de Software na Stone Age",
@@ -63,6 +65,7 @@ function App() {
       time: times[0].nome,
     },
     {
+      favorito: false,
       id: uuidv4(),
       nome: "GUILHERME LIMA",
       cargo: "Desenvolvedor Python e JavaScript na Alura",
@@ -71,6 +74,7 @@ function App() {
       time: times[0].nome,
     },
     {
+      favorito: false,
       id: uuidv4(),
       nome: "PAULO SILVEIRA",
       cargo: "Hipster e CEO da Alura",
@@ -79,6 +83,7 @@ function App() {
       time: times[0].nome,
     },
     {
+      favorito: false,
       id: uuidv4(),
       nome: "JULIANA AMOASEI",
       cargo: "Desenvolvedora de software e instrutora",
@@ -87,6 +92,7 @@ function App() {
       time: times[1].nome,
     },
     {
+      favorito: false,
       id: uuidv4(),
       nome: "DANIEL ARTINE",
       cargo: "Engenheiro de Software na Stone Age",
@@ -95,6 +101,7 @@ function App() {
       time: times[1].nome,
     },
     {
+      favorito: false,
       id: uuidv4(),
       nome: "GUILHERME LIMA",
       cargo: "Desenvolvedor Python e JavaScript na Alura",
@@ -103,6 +110,7 @@ function App() {
       time: times[1].nome,
     },
     {
+      favorito: false,
       id: uuidv4(),
       nome: "PAULO SILVEIRA",
       cargo: "Hipster e CEO da Alura",
@@ -111,6 +119,7 @@ function App() {
       time: times[1].nome,
     },
     {
+      favorito: false,
       id: uuidv4(),
       nome: "JULIANA AMOASEI",
       cargo: "Desenvolvedora de software e instrutora",
@@ -139,6 +148,15 @@ function App() {
   function cadastrarTime(novoTime) {
     setTimes([...times, { ...novoTime, id: uuidv4() }]);
   }
+  function resolverFavorito(id) {
+    setColaboradores(
+      colaboradores.map((colaborador) => {
+        if (colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+        return colaborador;
+      })
+    );
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -151,6 +169,7 @@ function App() {
       />
       {times.map((time, indice) => (
         <Time
+          aoFavoritar={resolverFavorito}
           key={indice}
           mudarCor={mudarCorTime}
           time={time}
