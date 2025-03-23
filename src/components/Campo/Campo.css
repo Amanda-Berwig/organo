@@ -1,11 +1,10 @@
-.campo__texto {
+.campo {
     display: flex;
     flex-direction: column;
-
     margin: 24px 0;
 }
 
-.campo__texto label {
+.campo label {
     font-family: var(--fonte-texto);
     font-size: 18px;
     color: var(--preto-label);
@@ -14,7 +13,7 @@
 
 }
 
-.campo__texto input {
+.campo input {
     background-color: var(--branco);
     font-family: var(--fonte-texto);
     font-size: 16px;
@@ -26,4 +25,8 @@
     padding: 24px;
     box-sizing: border-box;
 
+}
+
+.campo-color input {
+    padding: 8px 24px;
 }
