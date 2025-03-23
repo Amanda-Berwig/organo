@@ -7,9 +7,16 @@ export default function Time({
   corSecundaria,
   colaboradores,
   aoDeletar,
+  mudarCor,
 }) {
   return colaboradores.length > 0 ? (
     <section className="time" style={{ backgroundColor: corSecundaria }}>
+      <input
+        type="color"
+        className="input-color"
+        value={corPrimaria}
+        onChange={(evento) => mudarCor(evento.target.value, nome)}
+      />
       <h3 style={{ borderColor: corPrimaria }}>{nome}</h3>
       <div className="colaboradores">
         {colaboradores.map((colaborador, indice) => {
