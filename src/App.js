@@ -44,13 +44,19 @@ function App() {
   ];
   const [colaboradores, setColaboradores] = useState([]);
 
+  function deletarColaborador(nome) {
+    console.log("Deletar colaborador");
+    setColaboradores(
+      colaboradores.filter((colaborador) => colaborador.nome !== nome)
+    );
+  }
+
   return (
     <div className="App">
       <Banner />
       <Formulario
         times={times.map((time) => time.nome)}
         aoColaboradorCadastrado={(colaborador) => {
-          console.log(colaborador);
           setColaboradores([...colaboradores, colaborador]);
         }}
       />
@@ -63,6 +69,7 @@ function App() {
           colaboradores={colaboradores.filter(
             (colaborador) => colaborador.time === time.nome
           )}
+          aoDeletar={deletarColaborador}
         />
       ))}
       <Rodape />
